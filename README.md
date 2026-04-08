@@ -2,9 +2,7 @@
 
 A customer service handoff management tool built to solve a real problem I experienced as a customer service representative: customers getting frustrated by having to repeat their issues to multiple representatives across different shifts.
 
-🔗 **[Live Demo](your-vercel-url-here.vercel.app)** _(Add after deployment)_
-
-![App Screenshot](./screenshots/dashboard.png) _(Optional: Add after taking screenshots)_
+🔗 https://hand-off-app.vercel.app/
 
 ## 🎯 The Problem
 
