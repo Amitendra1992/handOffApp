@@ -5,7 +5,7 @@ import HandOffContext from "../utils/HandOffContext";
 const HandoffDetail = () => {
     const { id } = useParams();
     const navigate = useNavigate();
-    const { handoffs, updateHandoff, updateHandoffStatus, addComment } = useContext(HandOffContext);
+    const { handoffs, updateHandOff, updateHandOffStatus, adComments } = useContext(HandOffContext);
     
     const handoff = handoffs.find(h => h.id === id);
     
@@ -68,7 +68,7 @@ const HandoffDetail = () => {
     };
 
     const handleSave = () => {
-        updateHandoff(id, editData);
+        updateHandOff(id, editData);
         setIsEditing(false);
     };
 
@@ -78,13 +78,13 @@ const HandoffDetail = () => {
 
     const handleAddComment = () => {
         if (newComment.trim()) {
-            addComment(id, newComment);
+            adComments(id, newComment);
             setNewComment('');
         }
     };
 
     const handleStatusChange = (e) => {
-        updateHandoffStatus(id, e.target.value);
+        updateHandOffStatus(id, e.target.value);
     };
 
     return (
@@ -224,7 +224,6 @@ const HandoffDetail = () => {
                     {/* Add Comment */}
                     <div className="mb-4">
                         <textarea
-                            disabled = {!isEditing}
                             value={newComment}
                             onChange={(e) => setNewComment(e.target.value)}
                             placeholder="Add a comment or update..."
@@ -233,8 +232,7 @@ const HandoffDetail = () => {
                         />
                         <button
                             onClick={handleAddComment}
-                            disabled = {!isEditing}
-                            className={`mt-2 px-6 py-2 text-white rounded-lg font-medium ${isEditing ? "bg-blue-500 hover:bg-blue-600" : "bg-gray-500 hover:bg-gray-600"}`}
+                            className="mt-2 px-6 py-2 text-white rounded-lg font-medium bg-blue-500 hover:bg-blue-600"
                         >
                             Add Comment
                         </button>

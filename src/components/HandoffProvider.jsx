@@ -33,7 +33,7 @@ const HandoffProvider = ({children}) => {
     function updateHandOff(id, updatedData){
         setHandoffs(handoffs.map((handOff) => {
             return handOff.id === id 
-                    ? {...handOff, updatedData, updatedAt: new Date().toISOString()}
+                    ? {...handOff, ...updatedData, updatedAt: new Date().toISOString()}
                     : handOff
         }));
     }
