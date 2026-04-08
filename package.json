@@ -2,6 +2,10 @@
   "name": "shift-handoff-app",
   "description": "Customer service handoff management tool",
   "author": "Amitendra Pathak",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Amitendra1992/handOffApp"
+  },
   "private": true,
   "version": "0.0.0",
   "type": "module",
